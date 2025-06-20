@@ -4,7 +4,7 @@
 ### Variables (Update these values as needed)
 @baseUrl = http://localhost:3000/api/v1
 @adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoia2ltdXRhaWJyaWFuOTIyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MDM3ODA3NSwiZXhwIjoxNzUwOTgyODc1fQ.uvaVyEcuv9se-7OThPOIG-IfMLyMPeKnpOSUGlsWtr0
-@customerToken = YOUR_CUSTOMER_JWT_TOKEN_HERE
+@customerToken = 
 
 #####################
 # AUTHENTICATION ENDPOINTS

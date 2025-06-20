@@ -5,8 +5,14 @@
 
 ### Variables (Update these values as needed)
 @baseUrl = http://localhost:3000/api/v1
-@adminToken = YOUR_ADMIN_JWT_TOKEN_HERE
-@customerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiYnJpYW5rdXJ1dWkzNzY4QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MDM4MTMxNywiZXhwIjoxNzUwOTg2MTE3fQ.hItE7C8j315Us8toGBbwNN_YdeOov9tPnAy_LNZdFCg
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoia2ltdXRhaWJyaWFuOTIyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MDM3ODA3NSwiZXhwIjoxNzUwOTgyODc1fQ.uvaVyEcuv9se-7OThPOIG-IfMLyMPeKnpOSUGlsWtr0
+@customerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiYnJpYW5rdXJ1dWkzNzY4QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MDQwMDgxMSwiZXhwIjoxNzUxMDA1NjExfQ.j8cu_me9IyQPPM1pkvnbRtUNDdMJL2F35W7gBGFksh8
+
+
+### 10. Get All Products (Public)
+GET {{baseUrl}}/products
+
+
 
 ### 15. Add Item to Cart
 POST {{baseUrl}}/cart/add

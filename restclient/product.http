@@ -3,7 +3,7 @@
 ### Variables (Update these values as needed)
 @baseUrl = http://localhost:3000/api/v1
 @adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoia2ltdXRhaWJyaWFuOTIyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MDM4MTIxMCwiZXhwIjoxNzUwOTg2MDEwfQ.oMzdKD50PkartFp2uOsvZWK06bjkNULm_v7GHU6FMyM
-@customerToken = YOUR_CUSTOMER_JWT_TOKEN_HERE
+@customerToken = 
 
 ### 7. Create Product (Admin Only)
 POST {{baseUrl}}/products
@@ -66,5 +66,3 @@ Content-Type: application/json
 ### 14. Delete Product (Admin Only)
 DELETE {{baseUrl}}/products/1
 Authorization: Bearer {{adminToken}}
-
-#####################

@@ -31,7 +31,6 @@ export class EmailService {
         `Failed to send email to ${options.to}:`,
         error.stack,
       );
-      // Re-throwing the error can be useful if the calling service needs to know about the failure.
       throw error;
     }
   }
