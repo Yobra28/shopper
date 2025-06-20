@@ -1,0 +1,70 @@
+# PRODUCT ENDPOINTS
+#####################
+### Variables (Update these values as needed)
+@baseUrl = http://localhost:3000/api/v1
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoia2ltdXRhaWJyaWFuOTIyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MDM4MTIxMCwiZXhwIjoxNzUwOTg2MDEwfQ.oMzdKD50PkartFp2uOsvZWK06bjkNULm_v7GHU6FMyM
+@customerToken = YOUR_CUSTOMER_JWT_TOKEN_HERE
+
+### 7. Create Product (Admin Only)
+POST {{baseUrl}}/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "iPhone 15 Pro",
+  "shortDescription": "Latest iPhone with advanced A17 Pro chip and titanium design",
+  "price": 999.99,
+  "image": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
+  "stockQuantity": 50
+}
+
+### 8. Create Another Product
+POST {{baseUrl}}/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "MacBook Air M2",
+  "shortDescription": "Powerful and lightweight laptop with M2 chip",
+  "price": 1299.99,
+  "image": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500",
+  "stockQuantity": 30
+}
+
+### 9. Create Third Product
+POST {{baseUrl}}/products
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "AirPods Pro 2",
+  "shortDescription": "Wireless earbuds with active noise cancellation",
+  "price": 249.99,
+  "image": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=500",
+  "stockQuantity": 100
+}
+
+### 10. Get All Products (Public)
+GET {{baseUrl}}/products
+
+### 11. Search Products
+GET {{baseUrl}}/products?search=iPhone
+
+### 12. Get Single Product
+GET {{baseUrl}}/products/1
+
+### 13. Update Product (Admin Only)
+PATCH {{baseUrl}}/products/1
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "price": 949.99,
+  "stockQuantity": 45
+}
+
+### 14. Delete Product (Admin Only)
+DELETE {{baseUrl}}/products/1
+Authorization: Bearer {{adminToken}}
+
+#####################

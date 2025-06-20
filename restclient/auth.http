@@ -1,0 +1,71 @@
+# Shopie API - REST Client Test Endpoints
+# Base URL: http://localhost:3000/api/v1
+
+### Variables (Update these values as needed)
+@baseUrl = http://localhost:3000/api/v1
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoia2ltdXRhaWJyaWFuOTIyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MDM3ODA3NSwiZXhwIjoxNzUwOTgyODc1fQ.uvaVyEcuv9se-7OThPOIG-IfMLyMPeKnpOSUGlsWtr0
+@customerToken = YOUR_CUSTOMER_JWT_TOKEN_HERE
+
+#####################
+# AUTHENTICATION ENDPOINTS
+#####################
+
+### 1. Register Admin User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "kimutaibrian922@gmail.com",
+  "password": "admin123456",
+  "firstName": "Brian",
+  "lastName": "Admin",
+  "role": "ADMIN"
+}
+### 3. Login Admin
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "kimutaibrian922@gmail.com",
+  "password": "admin123456"
+}
+
+### 2. Register Customer User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "claudebrilliant@gmail.com",
+  "password": "customer123",
+  "firstName": "John",
+  "lastName": "Doe"
+}
+
+
+
+### 4. Login Customer
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "briankuruui3768@gmail.com",
+  "password": "customer123"
+}
+
+### 5. Request Password Reset
+POST {{baseUrl}}/auth/request-password-reset
+Content-Type: application/json
+
+{
+  "email": "briankuruui3768@gmail.com"
+}
+
+### 6. Reset Password (Use token from email)
+POST {{baseUrl}}/auth/reset-password
+Content-Type: application/json
+
+{
+  "token": "RESET_TOKEN_FROM_EMAIL",
+  "newPassword": "newpassword123"
+}
+

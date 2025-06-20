@@ -1,0 +1,65 @@
+#####################
+# ERROR TESTING SCENARIOS
+#####################
+
+### Variables (Update these values as needed)
+@baseUrl = http://localhost:3000/api/v1
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoia2ltdXRhaWJyaWFuOTIyQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MDM3ODA3NSwiZXhwIjoxNzUwOTgyODc1fQ.uvaVyEcuv9se-7OThPOIG-IfMLyMPeKnpOSUGlsWtr0
+@customerToken =  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiYnJpYW5rdXJ1dWkzNzY4QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MDM4MTMxNywiZXhwIjoxNzUwOTg2MTE3fQ.hItE7C8j315Us8toGBbwNN_YdeOov9tPnAy_LNZdFCg
+
+
+### 22. Try to Access Admin Route as Customer (Should Fail)
+POST {{baseUrl}}/products
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "name": "Unauthorized Product",
+  "shortDescription": "This should fail",
+  "price": 100.00,
+  "image": "https://example.com/image.jpg",
+  "stockQuantity": 10
+}
+
+### 23. Try to Add Non-existent Product to Cart (Should Fail)
+POST {{baseUrl}}/cart/add
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "productId": 999,
+  "quantity": 1
+}
+
+### 24. Try to Access Protected Route Without Token (Should Fail)
+GET {{baseUrl}}/cart
+
+### 25. Try to Login with Wrong Credentials (Should Fail)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@shopie.com",
+  "password": "wrongpassword"
+}
+
+### 26. Try to Register with Existing Email (Should Fail)
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "admin@shopie.com",
+  "password": "password123",
+  "firstName": "Another",
+  "lastName": "Admin"
+}
+
+### 27. Try to Add More Items Than Stock (Should Fail)
+POST {{baseUrl}}/cart/add
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "quantity": 1000
+}

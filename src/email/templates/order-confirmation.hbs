@@ -1,0 +1,60 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+  <h2 style="color: #333; text-align: center;">Order Confirmation</h2>
+  <p>Dear {{firstName}},</p>
+  <p>Thank you for your purchase! Your order has been confirmed and is being processed.</p>
+  
+  <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+    <h3 style="color: #333; margin-top: 0;">Order Details</h3>
+    <p><strong>Order ID:</strong> #{{orderId}}</p>
+    <p><strong>Order Date:</strong> {{orderDate}}</p>
+  </div>
+
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <thead>
+      <tr style="background-color: #f8f9fa;">
+        <th style="padding: 12px 8px; text-align: left; border-bottom: 2px solid #dee2e6;">Product</th>
+        <th style="padding: 12px 8px; text-align: center; border-bottom: 2px solid #dee2e6;">Qty</th>
+        <th style="padding: 12px 8px; text-align: right; border-bottom: 2px solid #dee2e6;">Price</th>
+        <th style="padding: 12px 8px; text-align: right; border-bottom: 2px solid #dee2e6;">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each items}}
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #eee;">
+            {{this.name}}
+          </td>
+          <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: center;">
+            {{this.quantity}}
+          </td>
+          <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">
+            {{this.price}}
+          </td>
+          <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">
+            {{this.total}}
+          </td>
+        </tr>
+      {{/each}}
+      <tr style="background-color: #f8f9fa; font-weight: bold;">
+        <td colspan="3" style="padding: 12px 8px; text-align: right; border-top: 2px solid #dee2e6;">
+          Total Amount:
+        </td>
+        <td style="padding: 12px 8px; text-align: right; border-top: 2px solid #dee2e6;">
+          {{grandTotal}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="background-color: #e7f3ff; padding: 15px; border-radius: 5px; margin: 20px 0;">
+    <p style="margin: 0; color: #0066cc;">
+      <strong>What's next?</strong><br>
+      We'll send you another email with tracking information once your order ships.
+    </p>
+  </div>
+
+  <p style="color: #666; font-size: 12px; margin-top: 30px;">
+    Thank you for choosing Shopie!<br>
+    The Shopie Team
+  </p>
+</div> 

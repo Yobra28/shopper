@@ -1,0 +1,54 @@
+#####################
+# CART ENDPOINTS
+#####################
+
+
+### Variables (Update these values as needed)
+@baseUrl = http://localhost:3000/api/v1
+@adminToken = YOUR_ADMIN_JWT_TOKEN_HERE
+@customerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiYnJpYW5rdXJ1dWkzNzY4QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MDM4MTMxNywiZXhwIjoxNzUwOTg2MTE3fQ.hItE7C8j315Us8toGBbwNN_YdeOov9tPnAy_LNZdFCg
+
+### 15. Add Item to Cart
+POST {{baseUrl}}/cart/add
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "quantity": 2
+}
+
+### 16. Add Another Item to Cart
+POST {{baseUrl}}/cart/add
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "quantity": 1
+}
+
+### 17. Get User's Cart
+GET {{baseUrl}}/cart
+Authorization: Bearer {{customerToken}}
+
+### 18. Update Cart Item Quantity
+PATCH {{baseUrl}}/cart/item/1
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "quantity": 5
+}
+
+### 19. Remove Item from Cart
+DELETE {{baseUrl}}/cart/item/1
+Authorization: Bearer {{customerToken}}
+
+### 20. Clear Entire Cart
+DELETE {{baseUrl}}/cart/clear
+Authorization: Bearer {{customerToken}}
+
+### 21. Confirm Purchase
+POST {{baseUrl}}/cart/confirm-purchase
+Authorization: Bearer {{customerToken}}
